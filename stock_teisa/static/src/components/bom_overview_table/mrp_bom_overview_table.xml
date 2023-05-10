@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="shelser_mrp.BomOverviewTable" t-inherit="mrp.BomOverviewTable" t-inherit-mode="extension" owl="1">
+        <xpath expr="//th[@t-if='showCosts']" position="replace">
+            <th t-if="showCosts" class="text-end" title="This is the cost based on the BoM of the product. It is computed by summing the costs of the components and operations needed to build the product." t-esc="data.bom_cost_main_currency_name"></th>
+            <t t-foreach="data.bom_cost_currencies" t-as="currency" t-key="currency['id']">
+                <th t-if="showCosts" class="text-end" title="This is the BoM cost converted into a currency selected to be part of this table." t-esc="currency['name']"></th>
+            </t>
+        </xpath>
+        <xpath expr="//td[@t-esc='formatMonetary(data.bom_cost / data.quantity)']" position="replace">
+            <td class="text-end" t-esc="formatMonetary(data.bom_cost / data.quantity)"/>
+            <t t-foreach="data.bom_cost_currencies" t-as="currency" t-key="currency['id']">
+                <th t-if="showCosts" class="text-end" t-esc="formatMonetaryExtraCurrency(currency['value'] / data.quantity, currency['id'])"></th>
+            </t>
+        </xpath>
+        <xpath expr="//td[@t-esc='formatMonetary(byproduct.bom_cost / byproduct.quantity)']" position="replace">
+            <td class="text-end" t-esc="formatMonetary(byproduct.bom_cost / byproduct.quantity)"/>
+            <t t-foreach="byproduct.bom_cost_currencies" t-as="currency" t-key="currency['id']">
+                <th t-if="showCosts" class="text-end" t-esc="formatMonetaryExtraCurrency( currency['value'] / byproduct.quantity, currency['id'])"></th>
+            </t>
+        </xpath>
+    </t>
+</templates>
+

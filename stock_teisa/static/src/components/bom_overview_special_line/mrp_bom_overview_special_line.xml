@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="shelser_mrp.BomOverviewSpecialLine" t-inherit="mrp.BomOverviewSpecialLine" t-inherit-mode="extension" owl="1">
+        <xpath expr="//td[@name='bom_cost']" position="replace">
+            <td name="bom_cost" t-if="showCosts" class="text-end">
+                <span t-if="props.type == 'operations'" t-esc="formatMonetary(data.operations_cost)"/>
+                <span t-elif="props.type == 'byproducts'" t-esc="formatMonetary(data.byproducts_cost)"/>
+            </td>
+            <t t-foreach="data.bom_cost_currencies" t-as="currency" t-key="currency['id']">
+                <td t-if="showCosts" class="text-end">
+                    <span t-if="props.type == 'operations' || props.type == 'byproducts'" t-esc="formatMonetaryExtraCurrency(currency['value'],currency['id'])"/>  
+                </td>
+            </t>
+        </xpath>
+    </t>
+</templates>
+
