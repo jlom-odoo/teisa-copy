@@ -5,17 +5,28 @@
         <field name="name">stock.picking.teisa.form</field>
         <field name="inherit_id" ref="stock.view_picking_form" />
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='product_uom']" position="after">
-                <field name="price_unit" attrs="{'invisible': [('picking_code', 'not in', ['outgoing'])]}"/>
-                <field name="subtotal" attrs="{'invisible': [('picking_code', 'in', ['incoming', 'internal'])]}"/>
+            <xpath expr="//field[@name='product_uom']" position="after" >
+                <field name="price_unit" attrs="{'column_invisible': [('parent.picking_type_code', 'not in', ['incoming','outgoing'])]}"/>
+                <field name="subtotal" attrs="{'column_invisible': [('parent.picking_type_code', 'not in', ['incoming','outgoing'])]}"/>
             </xpath>
-            <xpath expr="//page[@name='operations']" position="inside">
-                <group name="note_group" col="6" class="mt-2 mt-md-0">
-                    <group class="oe_subtotal_footer oe_right" colspan="2" name="move total">
+            <xpath expr="//page[@name='detailed_operations']" position="inside">
+                <group name="note_group" col="6" class="mt-2 mt-md-0" attrs="{'invisible': [('picking_type_code', 'not in', ['incoming','outgoing'])]}">
+                    <group class="oe_subtotal_footer oe_right" colspan="2" name="move total detailed operations">
                         <field name="tax_totals" widget="account-tax-totals-field" nolabel="1" colspan="2" readonly="1"/>
                     </group>
                     <div class="clearfix"/>
                 </group>
+            </xpath>
+            <xpath expr="//page[@name='operations']" position="inside">
+                <group name="note_group" col="6" class="mt-2 mt-md-0">
+                    <group class="oe_subtotal_footer oe_right" colspan="2" name="move total operations" attrs="{'invisible': [('picking_type_code', 'not in', ['incoming','outgoing'])]}">
+                        <field name="tax_totals" widget="account-tax-totals-field" nolabel="1" colspan="2" readonly="1"/>
+                    </group>
+                    <div class="clearfix"/>
+                </group>
+            </xpath>
+            <xpath expr="//button[@name='do_print_picking']" position="after">
+                <button name="do_print_picking_remision_teisa" string="Remision Report" groups="stock.group_stock_user" type="object" attrs="{'column_invisible': ['|',('state', '!=', 'assigned'),('picking_type_code', 'not in', ['incoming','outgoing'])]}" data-hotkey="o"/>
             </xpath>
         </field>
     </record>
