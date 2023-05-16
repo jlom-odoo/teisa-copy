@@ -1,11 +1,11 @@
 {
     'name': "Teisa Integral: Picking Operations report with prices and total",
-    'summary': "Add columns to BoM overview",
+    'summary': "Add columns to operations and detailed operations tab",
     'description': """
-        Shelser:  
+        Teisa Integral:  
         Task ID: 3247717
-        1. Add field to res.currency
-        2. Add columns to BoM overview table based on currencies having flag set as True
+        1. Add field to stock move and stock.move.line
+        2. Add remision report
     """,
     'author': "Odoo PS",
     'website': "http://www.odoo.com",
@@ -19,11 +19,4 @@
         'report/report_stockpicking_remision.xml',
         'report/stock_report_views.xml',
     ],
-    # 'assets': {
-    #     'web.assets_backend': [
-    #         'shelser_mrp/static/src/**/*.js',
-    #         'shelser_mrp/static/src/**/*.xml',
-    #     ],
-    # }
 }
-

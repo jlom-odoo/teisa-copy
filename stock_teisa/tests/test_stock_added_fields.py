@@ -1,12 +1,7 @@
-# -*- coding: utf-8 -*-
 
 from odoo.addons.stock.tests.common import TestStockCommon
-# from odoo.exceptions import ValidationError
-# from odoo.tests import Form
 from odoo.tools import mute_logger, float_round
 from odoo.tools.misc import formatLang
-# from odoo import fields
-
 
 class TestStockFlowTeisa(TestStockCommon):
     @classmethod
@@ -224,6 +219,5 @@ class TestStockFlowTeisa(TestStockCommon):
         #changing the price unit to trigger the compute_tax_total method:
         totals = picking_out.tax_totals
         subtotal_group = totals['groups_by_subtotal']['Untaxed Amount']
-        # self.assertEqual(len(subtotal_group), 1, 'There should only be one subtotal group (Untaxed Amount)')
         self.assertEqual(totals['amount_untaxed'], 1500, 'amount untaxed is the sum of price unit x quantity_done per line')
         self.assertEqual(totals['amount_total'], 1500, 'amount total should be the sum of subtotals + taxes/Correct this one')

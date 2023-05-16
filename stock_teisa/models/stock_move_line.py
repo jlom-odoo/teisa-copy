@@ -1,11 +1,8 @@
 from odoo import api, fields, models
 from odoo.tools.sql import column_exists, create_column
 
-
 class StockMoveLine(models.Model):
     _inherit = "stock.move.line"
-
-    #to be shown in Detailed operations tab
 
     price_unit = fields.Float("Price Unit", related='move_id.price_unit')
     subtotal = fields.Float("Subtotal", compute='compute_subtotal')
