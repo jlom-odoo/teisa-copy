@@ -221,3 +221,4 @@ class TestStockFlowTeisa(TestStockCommon):
         subtotal_group = totals['groups_by_subtotal']['Untaxed Amount']
         self.assertEqual(totals['amount_untaxed'], 1500, 'amount untaxed is the sum of price unit x quantity_done per line')
         self.assertEqual(totals['amount_total'], 1500, 'amount total should be the sum of subtotals + taxes/Correct this one')
+

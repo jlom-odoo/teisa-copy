@@ -15,3 +15,4 @@ class StockMoveLine(models.Model):
                record.subtotal=record.price_unit * record.reserved_uom_qty
             else:
                record.subtotal=record.price_unit * record.qty_done
+

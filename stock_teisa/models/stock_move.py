@@ -89,3 +89,4 @@ class StockMove(models.Model):
             discount=discount,
             price_subtotal=self.subtotal,
         )
+

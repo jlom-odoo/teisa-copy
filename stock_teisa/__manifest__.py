@@ -20,3 +20,4 @@
         'report/stock_report_views.xml',
     ],
 }
+
