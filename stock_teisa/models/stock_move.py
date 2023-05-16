@@ -8,10 +8,8 @@ class StockPicking(models.Model):
     @api.depends('move_ids.tax_ids', 'move_ids.price_unit', 'company_id')
     def _compute_tax_totals(self):
         for picking in self:
-            if picking.picking_type_code != 'incoming':
-                move_ids = picking.move_ids.filtered(lambda x: not x.purchase_line_id.display_type)
-            elif picking.picking_type_code != 'outgoing':
-                move_ids = picking.move_ids.filtered(lambda x: not x.sale_line_id.display_type)     
+            if picking.picking_type_code == 'incoming' or picking.picking_type_code == 'outgoing':
+                move_ids = picking.move_ids.filtered(lambda x: not x.purchase_line_id.display_type and not x.sale_line_id.display_type)   
             else:
                 move_ids = False      
             if move_ids:
@@ -22,9 +20,8 @@ class StockPicking(models.Model):
             else:
                 picking.tax_totals = False
 
-    def do_print_picking_remision_teisa(self):
-        return self.env.ref('stock.action_report_picking_remision').report_action(self)        
-
+    def do_print_picking_remision(self):
+        return self.env.ref('stock.action_report_picking_remision').report_action(self)
 class StockMove(models.Model):
     _inherit = "stock.move"
     

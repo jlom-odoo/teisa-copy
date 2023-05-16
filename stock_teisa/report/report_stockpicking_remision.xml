@@ -6,7 +6,7 @@
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="o">
                     <t t-call="web.external_layout">
-                        <div class="page">
+                        <div class="page" t-if="o.picking_type_id.code != 'internal'">
                             <div class="row justify-content-end mb16">
                                 <div class="col-4" name="right_box">
                                     <div t-field="o.name" t-options="{'widget': 'barcode', 'width': 600, 'height': 100, 'img_style': 'width:300px;height:50px;'}"/>
