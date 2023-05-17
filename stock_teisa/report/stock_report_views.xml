@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="action_report_picking_remision" model="ir.actions.report">
+        <record id="action_report_picking_remision_teisa" model="ir.actions.report">
             <field name="name">Remision report</field>
             <field name="model">stock.picking</field>
             <field name="report_type">qweb-pdf</field>
