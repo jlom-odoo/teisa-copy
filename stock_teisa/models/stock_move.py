@@ -11,7 +11,7 @@ class StockPicking(models.Model):
             if picking.picking_type_code == "incoming" or picking.picking_type_code == "outgoing":
                 move_ids = picking.move_ids.filtered(lambda x: not x.purchase_line_id.display_type and not x.sale_line_id.display_type)   
             else:
-                move_ids = False      
+                move_ids = False
             if move_ids:
                 picking.tax_totals = self.env["account.tax"]._prepare_tax_totals(
                     [x._convert_to_tax_base_line_dict() for x in move_ids],

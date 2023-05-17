@@ -12,7 +12,7 @@
     "category": "Customizations",
     "license": "OPL-1",
     "version": "1.0.0",
-    "depends": [ "stock" , "sale_management", "sale_stock"],
+    "depends": [ "stock" , "sale_management", "sale_stock", "purchase_stock"],
     "data": [
         "views/stock_picking_views.xml",
         "views/stock_move_views.xml",
