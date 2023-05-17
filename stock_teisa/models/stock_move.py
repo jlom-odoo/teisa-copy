@@ -58,8 +58,8 @@ class StockMove(models.Model):
 
     @api.depends("price_unit","quantity_done")
     def _compute_subtotal(self):
-        for record in self:
-            record.subtotal = record.price_unit * record.quantity_done
+        for move in self:
+            move.subtotal = move.price_unit * move.quantity_done
 
     def _convert_to_tax_base_line_dict(self):
         """ Convert the current record to a dictionary in order to use the generic taxes computation method
