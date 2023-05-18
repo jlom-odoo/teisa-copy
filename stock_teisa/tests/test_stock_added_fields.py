@@ -173,7 +173,7 @@ class TestStockFlowTeisa(TestStockCommon):
         picking_out = self.PickingObj.create({
             'picking_type_id': self.picking_type_out,
             'picking_type_code': 'outgoing',
-            'company_id': self.company.id,
+            'company_id': self.company_teisa.id,
             'location_id': self.supplier_location,
             'location_dest_id': self.stock_location})
 
