@@ -11,8 +11,5 @@ class StockMoveLine(models.Model):
     @api.depends("price_unit","qty_done", "state", "reserved_uom_qty")
     def compute_subtotal(self):
         for line in self:
-            if line.state != "done":
-               line.subtotal=line.price_unit * line.reserved_uom_qty
-            else:
-               line.subtotal=line.price_unit * line.qty_done
+            line.subtotal=line.price_unit * line.qty_done
 
