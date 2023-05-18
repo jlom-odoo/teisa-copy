@@ -18,7 +18,7 @@ class TestStockFlowTeisa(TestStockCommon):
             'name': 'Wood Corner Partner',
             'company_id': cls.env.user.company_id.id,
         })
-        cls.company = cls.env['res.company'].create({
+        cls.company_teisa = cls.env['res.company'].create({
             'currency_id': cls.env.ref('base.MXN').id,
             'partner_id': cls.partner_company2.id,
             'name': 'My Company (Chicago)-demo',
@@ -30,13 +30,13 @@ class TestStockFlowTeisa(TestStockCommon):
             'type_tax_use': 'purchase',
             'price_include': False,
         })
-        cls.product1 = cls.env['product.product'].create({
+        cls.product1_teisa = cls.env['product.product'].create({
             'name': 'Large Desk',
             'type': 'product',
             # 'categ_id': cls.stock_account_product_categ.id,
             'taxes_id': [cls.tax_10.id],
         })
-        cls.product2 = cls.env['product.product'].create({
+        cls.product2_teisa = cls.env['product.product'].create({
             'name': 'Small Desk',
             'type': 'product',
             # 'categ_id': cls.stock_account_product_categ.id,
@@ -53,19 +53,19 @@ class TestStockFlowTeisa(TestStockCommon):
             'partner_id': self.partner_id.id,
             'order_line': [
                 (0, 0, {
-                    'name': self.product1.name,
-                    'product_id': self.product1.id,
+                    'name': self.product1_teisa.name,
+                    'product_id': self.product1_teisa.id,
                     'product_qty': 8.0,
-                    'product_uom': self.product1.uom_po_id.id,
+                    'product_uom': self.product1_teisa.uom_po_id.id,
                     'price_unit': 100.0, # 50$
                     'date_planned': date_po1,
                     'taxes_id': [self.tax_10.id]
                 }),
                 (0, 0, {
-                    'name': self.product2.name,
-                    'product_id': self.product2.id,
+                    'name': self.product2_teisa.name,
+                    'product_id': self.product2_teisa.id,
                     'product_qty': 5.0,
-                    'product_uom': self.product1.uom_po_id.id,
+                    'product_uom': self.product1_teisa.uom_po_id.id,
                     'price_unit': 50.0, # 50$
                     'date_planned': date_po1,
                     'taxes_id': [self.tax_10.id]
@@ -80,10 +80,10 @@ class TestStockFlowTeisa(TestStockCommon):
             'partner_id': self.partner_id.id,
             'order_line': [
                 (0, 0, {
-                    'name': self.product1.name,
-                    'product_id': self.product1.id,
+                    'name': self.product1_teisa.name,
+                    'product_id': self.product1_teisa.id,
                     'product_qty': 9.0,
-                    'product_uom': self.product1.uom_po_id.id,
+                    'product_uom': self.product1_teisa.uom_po_id.id,
                     'price_unit': 100.0, # 50$
                     'date_planned': date_po2
                 }),
@@ -92,28 +92,28 @@ class TestStockFlowTeisa(TestStockCommon):
         picking_in = self.PickingObj.create({
             'picking_type_id': self.picking_type_in,
             'picking_type_code': 'incoming',
-            'company_id': self.company.id,
+            'company_id': self.company_teisa.id,
             'location_id': self.supplier_location,
             'location_dest_id': self.stock_location})
 
          # incoming moves
         move_a = self.MoveObj.create({
-            'name': self.product1.name,
-            'product_id': self.product1.id,
+            'name': self.product1_teisa.name,
+            'product_id': self.product1_teisa.id,
             'quantity_done': 10,
             'product_uom_qty': 1,
-            'product_uom': self.product1.uom_id.id,
+            'product_uom': self.product1_teisa.uom_id.id,
             'picking_id': picking_in.id,
             'location_id': self.supplier_location,
             'location_dest_id': self.stock_location,
             'picking_code': 'incoming',
             'purchase_line_id': po1.order_line[0].id})
         move_b = self.MoveObj.create({
-            'name': self.product2.name,
-            'product_id': self.product1.id,
+            'name': self.product2_teisa.name,
+            'product_id': self.product1_teisa.id,
             'quantity_done': 10,
             'product_uom_qty': 1,
-            'product_uom': self.product2.uom_id.id,
+            'product_uom': self.product2_teisa.uom_id.id,
             'picking_id': picking_in.id,
             'location_id': self.supplier_location,
             'location_dest_id': self.stock_location,
@@ -150,19 +150,19 @@ class TestStockFlowTeisa(TestStockCommon):
             'partner_id': self.partner_id.id,
             'order_line': [
                 (0, 0, {
-                    'name': self.product1.name,
-                    'product_id': self.product1.id,
+                    'name': self.product1_teisa.name,
+                    'product_id': self.product1_teisa.id,
                     'product_uom_qty': 8.0,
-                    'product_uom': self.product1.uom_po_id.id,
+                    'product_uom': self.product1_teisa.uom_po_id.id,
                     'price_unit': 100.0, # 50$
                     # 'date_planned': date_so1,
                     'tax_id': [self.tax_10.id]
                 }),
                 (0, 0, {
-                    'name': self.product2.name,
-                    'product_id': self.product2.id,
+                    'name': self.product2_teisa.name,
+                    'product_id': self.product2_teisa.id,
                     'product_uom_qty': 5.0,
-                    'product_uom': self.product1.uom_po_id.id,
+                    'product_uom': self.product1_teisa.uom_po_id.id,
                     'price_unit': 50.0, # 50$
                     # 'date_planned': date_so1,
                     'tax_id': [self.tax_10.id]
@@ -179,22 +179,22 @@ class TestStockFlowTeisa(TestStockCommon):
 
          # outgoing moves
         move_a = self.MoveObj.create({
-            'name': self.product1.name,
-            'product_id': self.product1.id,
+            'name': self.product1_teisa.name,
+            'product_id': self.product1_teisa.id,
             'quantity_done': 10,
             'product_uom_qty': 1,
-            'product_uom': self.product1.uom_id.id,
+            'product_uom': self.product1_teisa.uom_id.id,
             'picking_id': picking_out.id,
             'location_id': self.supplier_location,
             'location_dest_id': self.stock_location,
             'picking_code': 'incoming',
             'sale_line_id': so1.order_line[0].id})
         move_b = self.MoveObj.create({
-            'name': self.product2.name,
-            'product_id': self.product1.id,
+            'name': self.product2_teisa.name,
+            'product_id': self.product1_teisa.id,
             'quantity_done': 10,
             'product_uom_qty': 1,
-            'product_uom': self.product2.uom_id.id,
+            'product_uom': self.product2_teisa.uom_id.id,
             'picking_id': picking_out.id,
             'location_id': self.supplier_location,
             'location_dest_id': self.stock_location,
@@ -221,4 +221,3 @@ class TestStockFlowTeisa(TestStockCommon):
         subtotal_group = totals['groups_by_subtotal']['Untaxed Amount']
         self.assertEqual(totals['amount_untaxed'], 1500, 'amount untaxed is the sum of price unit x quantity_done per line')
         self.assertEqual(totals['amount_total'], 1500, 'amount total should be the sum of subtotals + taxes/Correct this one')
-
