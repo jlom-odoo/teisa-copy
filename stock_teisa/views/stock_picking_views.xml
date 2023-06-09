@@ -25,10 +25,6 @@
                     <div class="clearfix"/>
                 </group>
             </xpath>
-            <xpath expr="//button[@name='do_print_picking']" position="after">
-                <field name="picking_type_code" invisible="1"/>
-                <button name="do_print_picking_remision" string="Remision Report" groups="stock.group_stock_user" type="object" attrs="{'invisible': [('picking_type_code', '=', 'internal')]}" data-hotkey="o"/>
-            </xpath>
         </field>
     </record>
 </odoo>
