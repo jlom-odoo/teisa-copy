@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_report_picking_remision_teisa" model="ir.actions.report">
+            <field name="name">Remision report</field>
+            <field name="model">stock.picking</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">stock_teisa.report_picking_remision_teisa</field>
+            <field name="report_file">stock_teisa.report_picking_remision_teisa</field>
+            <field name="print_report_name">'Remision - %s - %s' % (object.partner_id.name or '', object.name)</field>
+            <field name="binding_model_id" ref="model_stock_picking"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>
+
