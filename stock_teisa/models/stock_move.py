@@ -15,7 +15,7 @@ class StockPicking(models.Model):
             if move_ids:
                 picking.tax_totals = self.env["account.tax"]._prepare_tax_totals(
                     [x._convert_to_tax_base_line_dict() for x in move_ids],
-                    picking.company_id.currency_id,
+                    picking.sale_id.currency_id if picking.sale_id else picking.company_id.currency_id,
                 )
             else:
                 picking.tax_totals = False
