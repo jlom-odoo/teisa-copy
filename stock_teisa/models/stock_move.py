@@ -11,14 +11,11 @@ class StockPicking(models.Model):
             if picking.picking_type_code == "incoming" or picking.picking_type_code == "outgoing":
                 move_ids = picking.move_ids.filtered(lambda x: not x.purchase_line_id.display_type and not x.sale_line_id.display_type)   
             else:
-                move_ids = False
-            if move_ids:
-                picking.tax_totals = self.env["account.tax"]._prepare_tax_totals(
-                    [x._convert_to_tax_base_line_dict() for x in move_ids],
-                    picking.sale_id.currency_id if picking.sale_id else picking.company_id.currency_id,
+                move_ids = []
+            picking.tax_totals = self.env["account.tax"]._prepare_tax_totals(
+                [x._convert_to_tax_base_line_dict() for x in move_ids],
+                picking.sale_id.currency_id if picking.sale_id else picking.company_id.currency_id,
                 )
-            else:
-                picking.tax_totals = False
 
     def do_print_picking_remision(self):
         return self.env.ref("stock.action_report_picking_remision_teisa").report_action(self)
