@@ -1,0 +1,443 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sales_teisa
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-24 01:57+0000\n"
+"PO-Revision-Date: 2024-04-24 01:57+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__1
+#, python-format
+msgid "1 BUSINESS DAY"
+msgstr "1 DÍA HÁBIL"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__7
+#, python-format
+msgid "1 WEEK"
+msgstr "1 SEMANA"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__84
+#, python-format
+msgid "10 - 12 WEEKS"
+msgstr "10 - 12 SEMANAS"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__10
+#, python-format
+msgid "10 BUSINESS DAYS"
+msgstr "10 DÍAS HÁBILES"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__70
+#, python-format
+msgid "10 WEEKS"
+msgstr "10 SEMANAS"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__11
+#, python-format
+msgid "11 BUSINESS DAYS"
+msgstr "11 DÍAS HÁBILES"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__98
+#, python-format
+msgid "12 - 14 WEEKS"
+msgstr "12 - 14 SEMANAS"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__12
+#, python-format
+msgid "12 BUSINESS DAYS"
+msgstr "12 DÍAS HÁBILES"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__13
+#, python-format
+msgid "13 BUSINESS DAYS"
+msgstr "13 DÍAS HÁBILES"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__112
+#, python-format
+msgid "14 - 16 WEEKS"
+msgstr "14 - 16 SEMANAS"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__15
+#, python-format
+msgid "15 BUSINESS DAYS"
+msgstr "15 DÍAS HÁBILES"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__126
+#, python-format
+msgid "16 - 18 WEEKS"
+msgstr "16 - 18 SEMANAS"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__16
+#, python-format
+msgid "16 BUSINESS DAYS"
+msgstr "16 DÍAS HÁBILES"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__17
+#, python-format
+msgid "17 BUSINESS DAYS"
+msgstr "17 DÍAS HÁBILES"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__18
+#, python-format
+msgid "18 BUSINESS DAYS"
+msgstr "18 DÍAS HÁBILES"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__19
+#, python-format
+msgid "19 BUSINESS DAYS"
+msgstr "19 DÍAS HÁBILES"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__2
+#, python-format
+msgid "2 BUSINESS DAYS"
+msgstr "2 DÍAS HÁBILES"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__14
+#, python-format
+msgid "2 WEEKS"
+msgstr "2 SEMANAS"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__154
+#, python-format
+msgid "20 - 22 WEEKS"
+msgstr "20 - 22 SEMANAS"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__168
+#, python-format
+msgid "20 - 24 WEEKS"
+msgstr "20 - 24 SEMANAS"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__182
+#, python-format
+msgid "20 - 26 WEEKS"
+msgstr "20 - 26 SEMANAS"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__196
+#, python-format
+msgid "20 - 28 WEEKS"
+msgstr "20 - 28 SEMANAS"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__20
+#, python-format
+msgid "20 BUSINESS DAYS"
+msgstr "20 DÍAS HÁBILES"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__140
+#, python-format
+msgid "20 WEEKS"
+msgstr "20 SEMANAS"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__3
+#, python-format
+msgid "3 BUSINESS DAYS"
+msgstr "3 DÍAS HÁBILES"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__21
+#, python-format
+msgid "3 WEEKS"
+msgstr "3 SEMANAS"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__224
+#, python-format
+msgid "30 - 32 WEEKS"
+msgstr "30 - 32 SEMANAS"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__210
+#, python-format
+msgid "30 WEEKS"
+msgstr "30 SEMANAS"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__234
+#, python-format
+msgid "32 - 34 WEEKS"
+msgstr "32 - 34 SEMANAS"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__252
+#, python-format
+msgid "34 - 36 WEEKS"
+msgstr "34 - 36 SEMANAS"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__266
+#, python-format
+msgid "36 - 38 WEEKS"
+msgstr "36 - 38 SEMANAS"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__4
+#, python-format
+msgid "4 BUSINESS DAYS"
+msgstr "4 DÍAS HÁBILES"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__28
+#, python-format
+msgid "4 WEEKS"
+msgstr "4 SEMANAS"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__280
+#, python-format
+msgid "40 WEEKS"
+msgstr "40 SEMANAS"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__5
+#, python-format
+msgid "5 BUSINESS DAYS"
+msgstr "5 DÍAS HÁBILES"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__35
+#, python-format
+msgid "5 WEEKS"
+msgstr "5 SEMANAS"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__6
+#, python-format
+msgid "6 BUSINESS DAYS"
+msgstr "6 DÍAS HÁBILES"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__42
+#, python-format
+msgid "6 WEEKS"
+msgstr "6 SEMANAS"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__49
+#, python-format
+msgid "7 WEEKS"
+msgstr "7 SEMANAS"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__8
+#, python-format
+msgid "8 BUSINESS DAYS"
+msgstr "8 DÍAS HÁBILES"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__56
+#, python-format
+msgid "8 WEEKS"
+msgstr "8 SEMANAS"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__9
+#, python-format
+msgid "9 BUSINESS DAYS"
+msgstr "9 DÍAS HÁBILES"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__63
+#, python-format
+msgid "9 WEEKS"
+msgstr "9 SEMANAS"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/sale_order.py:0
+#, python-format
+msgid "At least one sale order line does not have TEISA delivery time set"
+msgstr ""
+"No se tiene establecido el tiempo de entrega Teisa en una o más líneas"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/sale_order.py:0
+#, python-format
+msgid "At least one sale order line has a discount over 3%"
+msgstr "Al menos una línea de la orden de venta tiene un descuento mayor al 3%"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/sale_order.py:0
+#, python-format
+msgid "At least one sale order line has a margin under 7.9%"
+msgstr "El márgen es menor a 7.9%"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/sale_order.py:0
+#, python-format
+msgid "At least one sale order line has a unit price $0"
+msgstr "Tienes un producto con un precio $0"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/sale_order.py:0
+#, python-format
+msgid "At least one sale order line has the generic product"
+msgstr "No puedes confirmar una venta con el producto genérico"
+
+#. module: sales_teisa
+#: model:ir.model.fields,field_description:sales_teisa.field_sale_order_line__delivery_time_teisa
+msgid "Delivery Time Teisa"
+msgstr "Tiempo de Entrega TEISA"
+
+#. module: sales_teisa
+#: model:ir.model.fields,field_description:sales_teisa.field_sale_order_line__discount_over_limit_allowed
+msgid "Discount Over Limit Allowed"
+msgstr "Permitir Descuento Sobre Límite"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/constants.py:0
+#: model:ir.model.fields.selection,name:sales_teisa.selection__sale_order_line__delivery_time_teisa__0
+#, python-format
+msgid "IMMEDIATE"
+msgstr "INMEDIATO"
+
+#. module: sales_teisa
+#: model:ir.model.fields,field_description:sales_teisa.field_sale_order__sale_on_debt_allowed
+msgid "Sale On Debt Allowed"
+msgstr "Permitir Venta Morosa"
+
+#. module: sales_teisa
+#: model:ir.model.fields,field_description:sales_teisa.field_sale_order__sale_under_margin_allowed
+msgid "Sale Under Margin Allowed"
+msgstr "Permitir vender bajo margen"
+
+#. module: sales_teisa
+#: model:ir.model,name:sales_teisa.model_sale_order
+msgid "Sales Order"
+msgstr "Orden de venta"
+
+#. module: sales_teisa
+#: model:ir.model,name:sales_teisa.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de orden de venta"
+
+#. module: sales_teisa
+#. odoo-python
+#: code:addons/sales_teisa/models/sale_order.py:0
+#, python-format
+msgid ""
+"Total amount of this sale order is bigger than the credit limit of the "
+"customer"
+msgstr "Límite de crédito superado con esta orden de venta"

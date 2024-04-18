@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <function model="ir.default" name="set" eval="('sale.order', 'sale_under_margin_allowed', True)"/>
+    <function model="ir.default" name="set" eval="('sale.order', 'sale_on_debt_allowed', True)"/>
+    <function model="ir.default" name="set" eval="('sale.order.line', 'delivery_time_teisa', '0')"/>
+    <function model="ir.default" name="set" eval="('sale.order.line', 'discount_over_limit_allowed', True)"/>
+</odoo>
