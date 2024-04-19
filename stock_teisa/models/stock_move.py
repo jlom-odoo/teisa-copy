@@ -5,7 +5,7 @@ class StockPicking(models.Model):
     
     tax_totals = fields.Binary(string="Tax totals moves", compute="_compute_tax_totals")
 
-    @api.depends("move_ids.tax_ids", "move_ids.price_unit", "company_id")
+    @api.depends("move_ids.tax_ids", "move_ids.teisa_price_unit", "company_id")
     def _compute_tax_totals(self):
         for picking in self:
             if picking.picking_type_code == "incoming" or picking.picking_type_code == "outgoing":
@@ -24,39 +24,31 @@ class StockPicking(models.Model):
 class StockMove(models.Model):
     _inherit = "stock.move"
     
-    price_unit = fields.Float("Price Unit", compute="_compute_price_unit")
+    teisa_price_unit = fields.Float("Price Unit", compute="_compute_teisa_price_unit")
     subtotal = fields.Float("Subtotal", compute="_compute_subtotal")
-    tax_ids = fields.Many2many(comodel_name="account.tax", compute="_compute_tax_ids")
+    tax_ids = fields.Many2many(comodel_name="account.tax", compute="_compute_teisa_price_unit")
 
-    @api.depends("quantity_done")
-    def _compute_price_unit(self):
+    @api.depends("quantity_done", "picking_code", "origin_returned_move_id", "sale_line_id", "purchase_line_id")
+    def _compute_teisa_price_unit(self):
         for move in self:
             if move.picking_code == "incoming":
                 if move.origin_returned_move_id:
-                    move.price_unit = move.origin_returned_move_id.sale_line_id.price_unit
-                else:
-                    move.price_unit = move.purchase_line_id.price_unit
-            elif move.picking_code == "outgoing": 
-                move.price_unit = move.sale_line_id.price_unit
-            else:
-                move.price_unit = 0
-
-    def _compute_tax_ids(self):
-        for move in self:
-            if move.picking_code == "incoming":
-                if move.origin_returned_move_id:
+                    move.teisa_price_unit = move.origin_returned_move_id.sale_line_id.price_unit
                     move.tax_ids = move.origin_returned_move_id.sale_line_id.tax_id
                 else:
+                    move.teisa_price_unit = move.purchase_line_id.price_unit
                     move.tax_ids = move.purchase_line_id.taxes_id
             elif move.picking_code == "outgoing": 
+                move.teisa_price_unit = move.sale_line_id.price_unit
                 move.tax_ids = move.sale_line_id.tax_id
             else:
+                move.teisa_price_unit = 0
                 move.tax_ids = False
 
-    @api.depends("price_unit","quantity_done")
+    @api.depends("teisa_price_unit","quantity_done")
     def _compute_subtotal(self):
         for move in self:
-            move.subtotal = move.price_unit * move.quantity_done
+            move.subtotal = move.teisa_price_unit * move.quantity_done
 
     def _convert_to_tax_base_line_dict(self):
         """ Convert the current record to a dictionary in order to use the generic taxes computation method
@@ -83,7 +75,7 @@ class StockMove(models.Model):
             currency=currency,
             product=self.product_id, 
             taxes=self.tax_ids,
-            price_unit=self.price_unit,
+            price_unit=self.teisa_price_unit,
             quantity=self.quantity_done,
             discount=discount,
             price_subtotal=self.subtotal,

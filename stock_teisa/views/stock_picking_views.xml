@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="stock.view_picking_form" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='product_uom']" position="after" >
-                <field name="price_unit" attrs="{'column_invisible': [('parent.picking_type_code', 'not in', ['incoming','outgoing'])]}"/>
+                <field name="teisa_price_unit" attrs="{'column_invisible': [('parent.picking_type_code', 'not in', ['incoming','outgoing'])]}"/>
                 <field name="subtotal" attrs="{'column_invisible': [('parent.picking_type_code', 'not in', ['incoming','outgoing'])]}"/>
             </xpath>
             <xpath expr="//page[@name='detailed_operations']" position="inside">
@@ -28,4 +28,3 @@
         </field>
     </record>
 </odoo>
-

@@ -129,7 +129,7 @@ class TestStockFlowTeisa(TestStockCommon):
         # ----------------------------------------------------------------------
         # Incoming order from purchase
         # ----------------------------------------------------------------------
-        self.assertEqual(move_a.price_unit, 100, 'The unit_price should be the original price :90 ')
+        self.assertEqual(move_a.teisa_price_unit, 100, 'The unit_price should be the original price :90 ')
         move_a.quantity_done = 10
         self.assertEqual(move_a.subtotal, 1000, 'The subtotal should be 90* 10')
         move_b.quantity_done = 10
@@ -140,7 +140,7 @@ class TestStockFlowTeisa(TestStockCommon):
         subtotal_group = totals['groups_by_subtotal']['Untaxed Amount']
         # self.assertEqual(len(subtotal_group), 1, 'There should only be one subtotal group (Untaxed Amount)')
         self.assertEqual(totals['amount_untaxed'], 1500, 'amount untaxed is the sum of price unit x quantity_done per line')
-        self.assertEqual(totals['amount_total'], 1500, 'amount total should be the sum of subtotals + taxes/Correct this one')
+        self.assertEqual(totals['amount_total'], 1650, 'amount total should be the sum of subtotals + taxes/Correct this one')
 
     @mute_logger('odoo.addons.base.models.ir_model', 'odoo.models')
     def test_01_picking_outgoing_total_taxes(self):
@@ -210,7 +210,7 @@ class TestStockFlowTeisa(TestStockCommon):
         # ----------------------------------------------------------------------
         # Outgoing order from sale order
         # ----------------------------------------------------------------------
-        self.assertEqual(move_a.price_unit, 100, 'The unit_price should be the original price :90 ')
+        self.assertEqual(move_a.teisa_price_unit, 100, 'The unit_price should be the original price :90 ')
         move_a.quantity_done = 10
         self.assertEqual(move_a.subtotal, 1000, 'The subtotal should be 90* 10')
         move_b.quantity_done = 10
@@ -220,4 +220,4 @@ class TestStockFlowTeisa(TestStockCommon):
         totals = picking_out.tax_totals
         subtotal_group = totals['groups_by_subtotal']['Untaxed Amount']
         self.assertEqual(totals['amount_untaxed'], 1500, 'amount untaxed is the sum of price unit x quantity_done per line')
-        self.assertEqual(totals['amount_total'], 1500, 'amount total should be the sum of subtotals + taxes/Correct this one')
+        self.assertEqual(totals['amount_total'], 1650, 'amount total should be the sum of subtotals + taxes/Correct this one')
