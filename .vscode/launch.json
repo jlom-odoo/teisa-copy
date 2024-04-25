@@ -1,0 +1,81 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "teisa_test",
+            "type": "python",
+            "request": "launch",
+            "cwd": "/Users/andoni/odoo/versions/16.0/odoo/",
+            "preLaunchTask": "mailcatcher",
+            "python": "/Users/andoni/odoo/versions/16.0/venv/bin/python",
+            "program": "./odoo-bin",
+            "args": [
+                "--addons-path=addons,../enterprise,../design-themes,/Users/andoni/Desktop/Odoo/psus-convert-sh/psus-teisa_integral",
+                "--log-handler",
+                "odoo.addons.base.models.ir_attachment:WARNING",
+                //"-u",
+                //"automated_date_teisa",
+                "-d",
+                "teisa_test",
+                "--smtp", "localhost",
+                "--smtp-port", "1025",
+                "--limit-time-real", "0",
+                "--limit-time-cpu", "0",
+                "--test-tags", ":TestAccountMoveInInvoiceOnchanges"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "teisa_test shell",
+            "type": "python",
+            "request": "launch",
+            "cwd": "/Users/andoni/odoo/versions/16.0/odoo/",
+            "preLaunchTask": "mailcatcher",
+            "python": "/Users/andoni/odoo/versions/16.0/venv/bin/python",
+            "program": "./odoo-bin",
+            "args": [
+                "shell",
+                "--addons-path=addons,../enterprise,../design-themes,/Users/andoni/Desktop/Odoo/psus-convert-sh/psus-teisa_integral",
+                "--log-handler",
+                "odoo.addons.base.models.ir_attachment:WARNING",
+                //"-u",
+                //"automated_date_teisa",
+                "-d",
+                "teisa_test",
+                "--smtp", "localhost",
+                "--smtp-port", "1025",
+                "--limit-time-real", "0",
+                "--limit-time-cpu", "0"
+            ],
+            "console": "externalTerminal"
+        },
+        {
+            "name": "teisa_test_empty",
+            "type": "python",
+            "request": "launch",
+            "cwd": "/Users/andoni/odoo/versions/16.0/odoo/",
+            "python": "/Users/andoni/odoo/versions/16.0/venv/bin/python",
+            "preLaunchTask": "odoo_empty",
+            "program": "./odoo-bin",
+            "args": [
+                "--addons-path=addons,../enterprise,../design-themes,/Users/andoni/Desktop/Odoo/psus-convert-sh/psus-teisa_integral",
+                "--log-handler",
+                "odoo.addons.base.models.ir_attachment:WARNING",
+                "-i",
+                "automated_date_teisa",
+                "-d",
+                "teisa_test_empty",
+                "--test-enable",
+                //"--test-tags", ":TestClass.test_func,/test_module,external",
+                "--smtp", "localhost",
+                "--smtp-port", "1025",
+                "--limit-time-real", "0",
+                "--limit-time-cpu", "0"
+            ],
+            "console": "integratedTerminal"
+        }
+    ]
+}
